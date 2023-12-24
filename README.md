@@ -12,7 +12,7 @@ This repository was made by three VNU-UET students:
 
 [Do Minh Cuong](https://github.com/mcuongdo)
 
-[Ha Manh Dung]
+[Ha Manh Dung](https://github.com/manhdungne)
 
 ## Reference:
 [Aggregating Local Descriptors Into a Compact Image Representation](https://sci-hub.hkvisa.net/10.1109/cvpr.2010.5540039)
