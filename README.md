@@ -2,7 +2,15 @@
 
 ## Introduction
 This repository contains our VLAD (Vector of locally aggregated descriptors) implementations, reports, and experiment results for the mid-term project of Computer Vision (INT3412E 20) in VNU-UET.
+
 ## Description
+VLAD (Vector of Locally Aggregated Descriptors) is a method of representing descriptors in the field of image processing and computer vision, commonly used in object recognition and image search applications. It is a descriptor representation technique developed to enhance the performance of recognition systems based on local features of images.
+## Requirements
+Python >= 3.5
+
+## Installation
+git clone https://github.com/annguyen3112/Aggregating-Local-Descriptors-Into-a-Compact-Image-Representation.git
+cd Aggregating-Local-Descriptors-Into-a-Compact-Image-Representation
 
 ## Contributors
 
