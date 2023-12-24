@@ -16,6 +16,7 @@ This repository was made by three VNU-UET students:
 
 ## Preview result
 
+Here are some results after we applied the VLAD algorithm:
 <div align="center">
   <img src="experiments/result1.png">
 </div>
