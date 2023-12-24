@@ -1,4 +1,7 @@
-# INT3412E-Computer-Vision
+# Aggregating Local Descriptors Into a Compact Image Representation
+
+# Introduction
+
 # Contributors
 
 This repository was made by three VNU-UET students:
