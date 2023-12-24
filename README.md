@@ -16,5 +16,9 @@ This repository was made by three VNU-UET students:
 
 ## Preview result
 
+<div align="center">
+  <img src="experiments/result1.png">
+</div>
+
 ## Reference:
 [Aggregating Local Descriptors Into a Compact Image Representation](https://sci-hub.hkvisa.net/10.1109/cvpr.2010.5540039)
