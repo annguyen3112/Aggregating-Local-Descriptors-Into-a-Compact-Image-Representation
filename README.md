@@ -1,7 +1,7 @@
 # Aggregating Local Descriptors Into a Compact Image Representation
 
 ## Introduction
-
+This repository contains our VLAD (Vector of locally aggregated descriptors) implementations, reports, and experiment results for the mid-term project of Computer Vision (INT3412E 20) in VNU-UET.
 ## Description
 
 ## Contributors
