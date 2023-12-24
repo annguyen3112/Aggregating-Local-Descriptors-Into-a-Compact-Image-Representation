@@ -16,7 +16,3 @@ This repository was made by three VNU-UET students:
 
 ## Reference:
 [Aggregating Local Descriptors Into a Compact Image Representation](https://sci-hub.hkvisa.net/10.1109/cvpr.2010.5540039)
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
