@@ -157,24 +157,3 @@ display_image_with_vector(query_image_path, query_vlad_vector_reduced, "Query Im
 
 # Tìm và hiển thị hình ảnh tương tự trong tập kiểm thử
 search_similar_images(query_vlad_vector_reduced, train_kdtree, train_vlad_vectors_reduced, num_results=1)
-
-def compute_accuracy(kdtree, vlad_vectors_reduced, test_paths, codebook, pca):
-    correct_matches = 0
-    total_queries = len(test_paths)
-
-    for query_image_path in test_paths:
-        query_vlad_vector = compute_vlad_vector(query_image_path, codebook)
-        query_vlad_vector = query_vlad_vector.reshape(1, -1)
-        query_vlad_vector_reduced = pca.transform(query_vlad_vector)
-
-        target = search_similar_images_path(query_vlad_vector_reduced, train_kdtree, train_vlad_vectors_reduced, num_results=1)
-
-        if os.path.dirname(query_image_path) == os.path.dirname(target):
-                correct_matches += 1
-
-    accuracy = correct_matches / total_queries
-
-    return accuracy
-
-accuracy = compute_accuracy(train_kdtree, test_vlad_vectors_reduced, test_paths, codebook, pca)
-print(f"Accuracy: {accuracy * 100:.2f}%")
