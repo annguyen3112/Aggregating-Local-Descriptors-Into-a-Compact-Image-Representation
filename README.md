@@ -1,10 +1,10 @@
 # Aggregating Local Descriptors Into a Compact Image Representation
 
-# Introduction
+## Introduction
 
-# Description
+## Description
 
-# Contributors
+## Contributors
 
 This repository was made by three VNU-UET students:
 
@@ -13,3 +13,6 @@ This repository was made by three VNU-UET students:
 [Do Minh Cuong](https://github.com/mcuongdo)
 
 [Ha Manh Dung]
+
+## Reference:
+[Aggregating Local Descriptors Into a Compact Image Representation](https://sci-hub.hkvisa.net/10.1109/cvpr.2010.5540039)
