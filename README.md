@@ -9,10 +9,11 @@ VLAD (Vector of Locally Aggregated Descriptors) is a method of representing desc
 Python >= 3.5
 
 ## Installation
-'
+'''bash
 git clone https://github.com/annguyen3112/Aggregating-Local-Descriptors-Into-a-Compact-Image-Representation.git
 cd Aggregating-Local-Descriptors-Into-a-Compact-Image-Representation
-'
+
+'''
 
 ## Contributors
 
