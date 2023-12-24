@@ -48,7 +48,7 @@ def get_all_image_paths(directory):
     return image_paths
 
 # Path to the directory containing the Paris dataset
-image_directory = "/content/paris"
+image_directory = "/content/dataset"
 
 # Get all image paths from subdirectories
 image_paths = get_all_image_paths(image_directory)
