@@ -14,6 +14,13 @@ import matplotlib.pyplot as plt
 from shutil import move
 
 def remove_images(directory, num_to_keep=50):
+    """
+    Removes images from the dataset.
+
+    Args:
+        directory (str): Path to the dataset directory.
+        num_to_keep (int): Number of images to retain for each category.
+    """
     for category in os.listdir(directory):
         category_path = os.path.join(directory, category)
 
@@ -40,12 +47,30 @@ remove_images(paris_dataset_directory, num_to_keep=20)
 
 # Hàm để trích xuất đặc trưng cục bộ SIFT từ hình ảnh
 def extract_sift_features(image_path):
+    """
+    Extracts local SIFT features from an image.
+
+    Args:
+        image_path (str): Path to the image.
+
+    Returns:
+        tuple: Tuple containing key points and descriptors.
+    """
     image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
     sift = cv2.SIFT_create()
     key_points, descriptors = sift.detectAndCompute(image, None)
     return key_points, descriptors
 
 def get_all_image_paths(directory):
+    """
+    Retrieves all image paths from subdirectories of the given directory.
+
+    Args:
+        directory (str): Path to the dataset directory.
+
+    Returns:
+        list: List of image paths.
+    """
     image_paths = []
 
     for root, dirs, files in os.walk(directory):
@@ -93,6 +118,16 @@ codebook = kmeans.cluster_centers_
 
 # Hàm để tính BoF vector cho một hình ảnh
 def compute_bof_vector(image_path, codebook):
+    """
+    Computes the Bag of Features (BoF) vector for an image.
+
+    Args:
+        image_path (str): Path to the image.
+        codebook (numpy.ndarray): Codebook or cluster centers.
+
+    Returns:
+        numpy.ndarray: BoF vector.
+    """
     key_points, descriptors = extract_sift_features(image_path)
     bof_vector = np.zeros(k, dtype=np.float32)
 
@@ -122,6 +157,14 @@ train_kdtree = cKDTree(bof_vectors[:num_train])
 
 # Hàm để hiển thị vector mô tả hình ảnh
 def display_image_with_vector(image_path, bof_vector, title):
+    """
+    Displays an image with its Bag of Features (BoF) vector.
+
+    Args:
+        image_path (str): Path to the image.
+        bof_vector (numpy.ndarray): BoF vector.
+        title (str): Title for the plot.
+    """
     image = cv2.imread(image_path)
     plt.figure()
     plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
@@ -131,6 +174,15 @@ def display_image_with_vector(image_path, bof_vector, title):
 # Hàm để tìm và hiển thị hình ảnh tương tự
 def search_similar_images(query_vector, kdtree, bof_vectors,
                           num_results=1):
+    """
+    Finds and displays similar images based on a query vector.
+
+    Args:
+        query_vector (numpy.ndarray): Query vector.
+        kdtree: KD-Tree built on the training set.
+        bof_vectors: Bag of Features (BoF) vectors for the training set.
+        num_results (int): Number of similar images to display.
+    """
     _, indices = kdtree.query(query_vector, num_results)
 
     if num_results == 1:
@@ -147,6 +199,18 @@ def search_similar_images(query_vector, kdtree, bof_vectors,
 
 def search_similar_images_path(query_vector, kdtree, bof_vectors,
                           num_results=1):
+    """
+    Finds the path of a similar image based on a query vector.
+
+    Args:
+        query_vector (numpy.ndarray): Query vector.
+        kdtree: KD-Tree built on the training set.
+        bof_vectors: Bag of Features (BoF) vectors for the training set.
+        num_results (int): Number of similar images to find.
+
+    Returns:
+        str: Path of the similar image.
+    """
     _, indices = kdtree.query(query_vector, num_results)
 
     if num_results == 1:
@@ -171,6 +235,18 @@ display_image_with_vector(query_image_path, query_bof_vector, "Query Image")
 search_similar_images(query_bof_vector, train_kdtree, bof_vectors, num_results=1)
 
 def compute_accuracy(kdtree, bof_vectors, test_paths, codebook):
+    """
+    Computes the accuracy of the image retrieval system.
+
+    Args:
+        kdtree: KD-Tree built on the training set.
+        bof_vectors: Bag of Features (BoF) vectors for the test set.
+        test_paths (list): List of paths to test images.
+        codebook (numpy.ndarray): Codebook or cluster centers.
+
+    Returns:
+        float: Accuracy of the system.
+    """
     correct_matches = 0
     total_queries = len(test_paths)
 
