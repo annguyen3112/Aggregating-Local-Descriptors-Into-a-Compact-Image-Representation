@@ -12,7 +12,9 @@ Python >= 3.5
 ```bash
 git clone https://github.com/annguyen3112/Aggregating-Local-Descriptors-Into-a-Compact-Image-Representation.git
 cd Aggregating-Local-Descriptors-Into-a-Compact-Image-Representation
+pip install -r requirements.txt
 
+# Quickstart
 ```
 
 ## Contributors
